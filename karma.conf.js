@@ -42,11 +42,12 @@ module.exports = function (config) {
 		logLevel                : config.LOG_INFO,
 		autoWatch               : true,
     singleRun               : false
-		customLaunchers: {
-      MyHeadlessChrome: {
-        base: 'ChromeHeadless',
-        flags: ['--disable-translate', ' --no-sandbox', '--remote-debugging-port=9223']
-      }
-    },
+		browsers: ['Chrome'],
+    customLaunchers: {
+     ChromeHeadlessCI: {
+      base: 'ChromeHeadless',
+      flags: ['--no-sandbox', '--disable-gpu']
+  }
+},
 	});
 };
